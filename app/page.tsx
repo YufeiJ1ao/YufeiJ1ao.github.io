@@ -25,6 +25,16 @@ const projects = [
   },
   {
     index: "03",
+    title: "The Rise of Anti-Heroes",
+    discipline: "Social data · NLP · Interactive visualisation",
+    description:
+      "A collaborative study of audience attitudes towards anti-heroes across social platforms, combining sentiment analysis with an interactive 3D Sentiment DNA visualisation. Critical Data Group 1 · 2025.",
+    href: "https://github.com/YufeiJ1ao/antiheroSocialDataAnalysis",
+    image: "/antihero-sentiment-dna.png",
+    embed: "https://group1-antihero.netlify.app/",
+  },
+  {
+    index: "04",
     title: "Florasync",
     discipline: "Physical computing · Urban nature",
     description:
@@ -34,7 +44,7 @@ const projects = [
       "https://github.com/YufeiJ1ao/Ambient-flower-Florasync/assets/93790647/bead4b65-8e3c-4f4c-ba81-ddd05d35593f",
   },
   {
-    index: "04",
+    index: "05",
     title: "Emotion Detector",
     discipline: "Machine learning · Arduino · NLP",
     description:
@@ -44,7 +54,7 @@ const projects = [
       "https://github.com/user-attachments/assets/986f2c37-c74d-40ac-925f-d36628645ec4",
   },
   {
-    index: "05",
+    index: "06",
     title: "Climate as Form",
     discipline: "Data art · TouchDesigner · Rhino",
     description:
@@ -125,12 +135,12 @@ export default function Home() {
         </div>
         <div className="project-list">
           {projects.map((project) => (
+            <article className="project-entry" key={project.title}>
             <a
               className="project-card"
               href={project.href}
               target="_blank"
               rel="noreferrer"
-              key={project.title}
             >
               <span className="project-index">{project.index}</span>
               <div className={`project-visual ${project.image ? "has-image" : "data-visual"}`}>
@@ -151,6 +161,29 @@ export default function Home() {
               </div>
               <span className="project-arrow" aria-hidden="true">↗</span>
             </a>
+            {project.embed && (
+              <section className="project-embed" aria-label="Anti-Hero Sentiment DNA live visualisation">
+                <div className="project-embed-heading">
+                  <p>Explore the Sentiment DNA</p>
+                  <a href={project.embed} target="_blank" rel="noreferrer">
+                    Open full screen ↗
+                  </a>
+                </div>
+                <iframe
+                  src={project.embed}
+                  title="Anti-Hero Sentiment DNA — interactive 3D visualisation"
+                  loading="lazy"
+                  allow="fullscreen"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+                <p className="project-embed-caption">
+                  Drag to rotate, zoom to explore, and click a node to read an opinion.
+                  If the visualisation does not load, open it using the link above.
+                </p>
+              </section>
+            )}
+            </article>
           ))}
         </div>
       </section>
