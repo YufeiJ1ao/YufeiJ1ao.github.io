@@ -53,15 +53,6 @@ const projects = [
     image:
       "https://github.com/user-attachments/assets/986f2c37-c74d-40ac-925f-d36628645ec4",
   },
-  {
-    index: "06",
-    title: "Climate as Form",
-    discipline: "Data art · TouchDesigner · Rhino",
-    description:
-      "Visual research translating London climate data into colour, spatial diagrams and sculptural forms that make environmental change tangible.",
-    href: "https://github.com/YufeiJ1ao/VisualAndSensing",
-    image: null,
-  },
 ];
 
 const capabilities = [
